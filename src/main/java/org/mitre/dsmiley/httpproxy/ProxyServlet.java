@@ -422,7 +422,7 @@ public class ProxyServlet extends HttpServlet {
         uri.append(getTargetUri(servletRequest));
         // Handle the path given to the servlet
         if (servletRequest.getPathInfo() != null) {//ex: /my/path.html
-            uri.append(encodeUriQuery(servletRequest.getPathInfo()));
+            uri.append(encodeUriQuery(servletRequest.getRequestURI()));
         }
         // Handle the query string & fragment
         String queryString = servletRequest.getQueryString();//ex:(following '?'): name=value&foo=bar#fragment
